@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+</head>
+<body>
+        <div class="navigation dotcontainer" id="mainNav">
+                <a class="navigation__link dot" href="#1"></a>
+                <a class="navigation__link dot" href="#2"></a>
+                <a class="navigation__link dot" href="#3"></a>
+                <a class="navigation__link dot" href="#4"></a>
+                <a class="navigation__link dot" href="#5"></a>
+        </div>
+    <div class="intro page-section" id="1">
+        <h2>Blazey</h2>
+            <img class="container-fluid" src="./Drawings/Me First Page.PNG" alt="">
+            <p>
+            A college student in NTUE.<br>
+            Draws sometimes, beatbox sometimes.<br>
+            Basically struggling with life.
+            </p>
+    </div>  
+    <div class="digital ">
+        <h2 class=" page-section" id="2">Digital Art</h2>
+        <div class="container-fluid digitaltall">
+            <img src="./Drawings/Digital/Skull.PNG" alt="" >
+            <img src="./Drawings/Digital/Skull Glow.PNG" alt="">
+            <img src="./Drawings/Digital/Harvey.PNG" alt="" >          
+        </div>
+        <div class="container-fluid digitalsquare">
+               
+                <img src="./Drawings/Digital/Lucifer.PNG" alt="">
+                <img src="./Drawings/Digital//Dance.PNG" alt="" >
+                <img src="./Drawings/Digital/Venom.PNG" alt="" > 
+        </div>
+        <div class="container-fluid digitaltall">
+                <img src="./Drawings/Digital/Spray.PNG" alt="" >
+                <img src="./Drawings/Digital/Wine.PNG" alt="">
+                <img src="./Drawings/Digital/Soul.PNG" alt="" >          
+            </div>
+
+
+</div>
+<div class="sketchbook page-section">
+    <h2 id="3">Sketchbook</h2>
+    <div class="container-fluid sketchbooktall"  id="3">
+        <img src="./Drawings/Sketchbook/DrStrange.JPG" alt="" >
+        <img src="./Drawings/Sketchbook/Owl.JPG" alt="">
+        <img src="./Drawings/Sketchbook/R2D2.JPG" alt="" >          
+    </div>
+    <div class="container-fluid sketchbooktall">
+        <img src="./Drawings/Sketchbook/RobotBW.JPG" alt="" >
+        <img src="./Drawings/Sketchbook/RobotYellow.JPG" alt="">
+        <img src="./Drawings/Sketchbook/SpiderVerse.JPG" alt="" >          
+    </div>
+    <div class="container-fluid sketchbooktall">
+        <img src="./Drawings/Sketchbook/CandySona.JPG" alt="" >
+        <img src="./Drawings/Sketchbook/TheWanted.JPG" alt="">
+        <img src="./Drawings/Sketchbook/ShadesofGrey.JPG" alt="" >          
+    </div>
+</div>
+
+<div class="graffiti page-section">
+    <h2 id="4">Graffiti</h2>
+    <div class="container-fluid graffitishort">
+        <img src="./Drawings/Graffiti/Blazey.JPG" alt="" >
+        <img src="./Drawings/Graffiti/Camryn.JPG" alt="" >
+        <img src="./Drawings/Graffiti/Bella.JPG" alt="" >
+    </div>
+</div>
+
+<div class="adobe page-section">
+    <h2 id="5">Adobe</h2>
+    <div class="container-fluid adobetall">
+        <img src="./Drawings/Adobe/Anglar Fish.jpg" alt="" >
+        <img src="./Drawings/Adobe/Band Bokeh.jpg" alt="" >
+        <img src="./Drawings/Adobe/Overlay.jpg" alt="" >
+        <img src="./Drawings/Adobe/Polyart.JPG" alt="" >
+        <img src="./Drawings/Adobe/Billboard Poster.jpg" alt="" >
+    </div>
+</div>
+
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+      return false;
+    } // End if
+   
+  });
+});
+
+$(window).scroll(function() {
+		var scrollDistance = $(window).scrollTop();
+
+		// Show/hide menu on scroll
+		//if (scrollDistance >= 850) {
+		//		$('nav').fadeIn("fast");
+		//} else {
+		//		$('nav').fadeOut("fast");
+		//}
+	
+		// Assign active class to nav links while scolling
+		$('.page-section').each(function(i) {
+				if ($(this).position().top <= scrollDistance) {
+						$('.navigation a.active').removeClass('active');
+						$('.navigation a').eq(i).addClass('active');
+				}
+        });
+        
+}).scroll();
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+   
+</body>
+</html>
